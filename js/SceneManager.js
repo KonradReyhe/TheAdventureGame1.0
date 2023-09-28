@@ -1,3 +1,6 @@
+const isGitHubPages = window.location.hostname === "konradreyhe.github.io";
+const BASE_PATH = isGitHubPages ? "/TheAdventureGame1.0" : "..";
+
 import { TextManager } from "./TextManager.js";
 import {
   displayInteractiveMenu,
@@ -18,15 +21,14 @@ const SCENES = {
 };
 
 const IMAGE_PATHS = {
-  FORREST_PATH: "/TheAdventureGame1.0/Backgrounds/Forrest_Path.jpg",
-  HOME: "../Backgrounds/home.jpg",
-  CARROT: "../Items/carrot.png",
-  MAILBOX: "Interactables/mailbox.png",
+  FORREST_PATH: `${BASE_PATH}/Backgrounds/Forrest_Path.jpg`,
+  HOME: `${BASE_PATH}/Backgrounds/home.jpg`,
+  CARROT: `${BASE_PATH}/Items/carrot.png`,
+  MAILBOX: `${BASE_PATH}/Interactables/mailbox.png`,
 };
 
 export class SceneManager {
   constructor(languageManager, trashCan) {
-    
     this.currentScene = SCENES.STARTING_SCREEN;
     this.homeScene = null;
     this.textManager = new TextManager();
@@ -38,7 +40,7 @@ export class SceneManager {
     this.homeInteractables = [];
     this.currentMenu = null;
     this.languageManager = languageManager;
-    this.trashCan = trashCan; 
+    this.trashCan = trashCan;
   }
 
   setup(character, inventory, trashCan) {
@@ -89,7 +91,7 @@ export class SceneManager {
     interactable.className = "interactable";
     interactable.addEventListener("click", clickAction);
     if (src === IMAGE_PATHS.CARROT) {
-      interactable.id = "carrot"; 
+      interactable.id = "carrot";
     }
     document.getElementById(SCENES.GAME_SCENE).appendChild(interactable);
     return interactable;
@@ -121,10 +123,9 @@ export class SceneManager {
     this.transitionScenes(
       transitionCover,
       backgroundImg,
-      "/TheAdventureGame1.0/Backgrounds/Forrest_Path.jpg",
+      IMAGE_PATHS.FORREST_PATH,
       this.handleForestTransition.bind(this)
-  );
-  
+    );
   }
 
   getElementsFromDOM() {
@@ -262,14 +263,13 @@ export class SceneManager {
   }
 
   createGoToOldMansHouseButton() {
-    const gameScene = document.querySelector("#gameScene"); 
+    const gameScene = document.querySelector("#gameScene");
     const goToOldMansHouseButton = document.createElement("button");
     goToOldMansHouseButton.id = "goToOldMansHouseButton";
     goToOldMansHouseButton.innerText =
       this.languageManager.textManager.getText("goToOldMansHouse");
 
     gameScene.appendChild(goToOldMansHouseButton);
-    
   }
 
   handleHomeTransition() {
@@ -287,7 +287,6 @@ export class SceneManager {
     const currentLanguage = this.languageManager.getCurrentLanguage();
     this.languageManager.setCurrentLanguage(currentLanguage);
 
-    
     if (this.trashCan && this.trashCan.isOpened()) {
       setupTrashcanOpenInteraction(
         this.inventory,
@@ -330,7 +329,7 @@ export class SceneManager {
 
   createGoButton(gameScene) {
     const goButton = this.createButton(
-      this.textManager.getText("goToOldMansHouse"), 
+      this.textManager.getText("goToOldMansHouse"),
       "go-button",
       this.goToOldMansHouse.bind(this)
     );
@@ -344,6 +343,6 @@ export class SceneManager {
         interactable.parentNode.removeChild(interactable);
       }
     }
-    this.homeInteractables = []; 
+    this.homeInteractables = [];
   }
 }
