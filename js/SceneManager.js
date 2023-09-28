@@ -18,7 +18,7 @@ const SCENES = {
 };
 
 const IMAGE_PATHS = {
-  FORREST_PATH: "../Backgrounds/Forrest_Path.jpg",
+  FORREST_PATH: "/TheAdventureGame1.0/Backgrounds/Forrest_Path.jpg",
   HOME: "../Backgrounds/home.jpg",
   CARROT: "../Items/carrot.png",
   MAILBOX: "Interactables/mailbox.png",
@@ -121,9 +121,10 @@ export class SceneManager {
     this.transitionScenes(
       transitionCover,
       backgroundImg,
-      "../Backgrounds/Forrest_Path.jpg",
+      "/TheAdventureGame1.0/Backgrounds/Forrest_Path.jpg",
       this.handleForestTransition.bind(this)
-    );
+  );
+  
   }
 
   getElementsFromDOM() {
