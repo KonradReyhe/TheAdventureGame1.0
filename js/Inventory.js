@@ -21,7 +21,7 @@ export class Inventory {
     this.addItemToInventory({
       id: 1,
       name: { en: "Egg", de: "Ei" },
-      image: "items/egg.png",
+      image: "Items/egg.png",
       clickAction: () => {
         this.textManager.showEggMessage();
       },

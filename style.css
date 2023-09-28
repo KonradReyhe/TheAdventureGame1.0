@@ -297,8 +297,8 @@ body {
   left: 10px;
   width: 25%;
   max-width: 400px;
-  height: calc(100% - 600px); 
-  padding: 20px; 
+  height: calc(100% - 600px);
+  padding: 20px;
   border: 2px solid #fff;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.8);
@@ -306,11 +306,11 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; 
-  align-items: flex-start; 
+  justify-content: flex-start;
+  align-items: flex-start;
   color: #ffffff;
   font-size: 1.5rem;
-  text-align: left; 
+  text-align: left;
 }
 
 .options {
@@ -433,7 +433,7 @@ body {
   padding: 10px;
   display: flex;
   flex-direction: column;
-  gap: 10px; 
+  gap: 10px;
   color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -452,7 +452,7 @@ body {
   color: #ffffff;
   border-radius: 5px;
   transition: background-color 0.3s ease;
-  margin: 2px 0; 
+  margin: 2px 0;
 }
 
 .interactive-menu button:hover {
@@ -474,7 +474,6 @@ body {
     transform: translateY(0);
   }
 }
-
 
 @keyframes spin {
   from {
@@ -528,9 +527,9 @@ body {
   background-color: white;
   padding: 20px;
   position: relative;
-  font-family: "Montserrat", sans-serif; 
+  font-family: "Montserrat", sans-serif;
   line-height: 1.4;
-  font-size: 18px; 
+  font-size: 18px;
 }
 
 .close-button {
@@ -565,7 +564,7 @@ body {
 
 .go-button {
   position: fixed;
-  left: 15px; 
+  left: 15px;
   top: 50%;
   transform: translateY(-50%);
   background-color: #4caf50;
@@ -580,8 +579,8 @@ body {
 
 #beetle {
   background-image: url("Backgrounds/beetle.png");
-  width: 100px; 
-  height: 100px; 
+  width: 100px;
+  height: 100px;
   position: absolute;
 }
 
@@ -692,8 +691,8 @@ body {
   left: 10px;
   width: 25%;
   max-width: 400px;
-  height: calc(100% - 600px); 
-  padding: 20px; 
+  height: calc(100% - 600px);
+  padding: 20px;
   border: 2px solid #fff;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.8);
@@ -701,11 +700,11 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; 
-  align-items: flex-start; 
+  justify-content: flex-start;
+  align-items: flex-start;
   color: #ffffff;
   font-size: 1.5rem;
-  text-align: left; 
+  text-align: left;
 }
 
 .options {
@@ -828,7 +827,7 @@ body {
   padding: 10px;
   display: flex;
   flex-direction: column;
-  gap: 10px; 
+  gap: 10px;
   color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -847,7 +846,7 @@ body {
   color: #ffffff;
   border-radius: 5px;
   transition: background-color 0.3s ease;
-  margin: 2px 0; 
+  margin: 2px 0;
 }
 
 .interactive-menu button:hover {
@@ -869,7 +868,6 @@ body {
     transform: translateY(0);
   }
 }
-
 
 @keyframes spin {
   from {
@@ -923,9 +921,9 @@ body {
   background-color: white;
   padding: 20px;
   position: relative;
-  font-family: "Montserrat", sans-serif; 
+  font-family: "Montserrat", sans-serif;
   line-height: 1.4;
-  font-size: 18px; 
+  font-size: 18px;
 }
 
 .close-button {
@@ -960,7 +958,7 @@ body {
 
 .go-button {
   position: fixed;
-  left: 15px; 
+  left: 15px;
   top: 50%;
   transform: translateY(-50%);
   background-color: #4caf50;
@@ -971,13 +969,6 @@ body {
   padding: 10px;
   font-size: 16px;
   z-index: 1001;
-}
-
-#beetle {
-  background-image: url("Backgrounds/beetle.png");
-  width: 100px; 
-  height: 100px; 
-  position: absolute;
 }
 
 .character-move-left {

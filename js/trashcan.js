@@ -248,10 +248,10 @@ export function displayMirror(
     return;
   }
 
-  const mirror = new Item("Items/Mirror.png", 0, 0, 5, 10);
+  const mirror = new Item("Items/mirror.png", 0, 0, 5, 10);
   mirror.addToScene(document.getElementById("gameScene"));
 
-  const mirrorElement = document.querySelector('img[src="Items/Mirror.png"]');
+  const mirrorElement = document.querySelector('img[src="Items/mirror.png"]');
   mirrorElement.style.right = "0";
   mirrorElement.style.left = "unset";
   mirrorElement.style.bottom = "30%";
@@ -268,7 +268,7 @@ export function displayMirror(
         inventory.addItemToInventory({
           id: 2,
           name: { en: "Mirror", de: "Spiegel" },
-          image: "Items/Mirror.png",
+          image: "Items/mirror.png",
           clickAction: () => {
             const textWindow = document.getElementById("textWindow");
             if (textWindow) {
