@@ -16,27 +16,22 @@ A point-and-click adventure game designed as a learning project in HTML, CSS, an
 - **Eindringliche Hintergrundmusik | Immersive Background Music:** Atmosphärische Musik, die die Stimmung für jede Szene setzt. Atmospheric music that sets the tone for each scene.
 
 ### Heimatszene | Home Scene
-
 Der Charakter erscheint vor seinem Zuhause. Öffne und inspiziere den Mülleimer. Nimm einen geheimnisvollen Brief aus dem Briefkasten. Wenn der Brief ins Inventar genommen und geöffnet wird, erscheint ein Button, um zur nächsten Szene zu gelangen.
 
 Character spawns in front of his home. Open and inspect the trashcan. Pick up a mysterious letter from the mailbox. Once taken into the inventory and opened, a button to progress to the next scene is activated.
 
 ### Waldpfad Szene | Forest Path Scene
+Nimm eine Karotte auf. (Bitte beachten: Der Fortschritt nach dieser Szene wurde noch nicht entwickelt.)
 
-Nimm eine Karotte auf.
-
-Pick up a carrot.
+Pick up a carrot. (Please note: Progression beyond this scene has not been developed yet.)
 
 ## Entwicklungsziel | Development Purpose
-
 Seit Februar 2023 mache ich eine Umschulung zum Anwendungsentwickler, die im Februar 2025 abgeschlossen sein wird. Dieses Spiel wurde in erster Linie als praktisches Projekt entwickelt, um:
-
 - Die Grundlagen und Feinheiten von HTML, CSS und JavaScript zu erlernen.
 - Den Problemlösungsprozess in der Spielentwicklung zu verstehen.
 - Mit OpenAI's ChatGPT4.0 zu experimentieren.
 
 I've been undergoing retraining as an application developer since February 2023, which will conclude in February 2025. This game was primarily developed as a hands-on project to:
-
 - Understand the basics and nuances of HTML, CSS, and JavaScript.
 - Grasp the problem-solving process in game development.
 - Experiment with OpenAI's ChatGPT4.0.
@@ -46,12 +41,10 @@ Obwohl ich durch dieses Projekt wertvolle Erfahrungen in der Spieleentwicklung g
 While this project has given me valuable insights into game development, my primary interest and career goal lie in FrontEnd JavaScript development. I have a preference to work as a JavaScript FrontEnd Developer and am currently looking for suitable opportunities in this field. I reside in Germany and am applying to German companies.
 
 ### Kontakt | Contact
-
 📧 Email: [kreyhe@yahoo.com](mailto:kreyhe@yahoo.com)
 🔗 LinkedIn: [Konrad Reyhe](https://www.linkedin.com/in/konrad-reyhe-6a055b293/)
 
 ## Credits
-
 - **Envelope/Briefumschlag:**
   - [Vecteezy](https://de.vecteezy.com/vektorkunst/425300-umschlag-ikonen-vektor-illustration)
 - **Hintergrundbild/Background Image:**
@@ -71,7 +64,6 @@ While this project has given me valuable insights into game development, my prim
   - [Freepik](https://de.freepik.com/vektoren-kostenlos/organic-flat-character-animation-frames-pack_13762400.htm)
 
 ## Feedback und Mitarbeit | Feedback and Collaboration
-
 Ihr Feedback macht den Unterschied! Haben Sie Vorschläge, finden Sie Fehler, oder möchten Sie beitragen? Zögern Sie nicht, ein Problem zu melden oder einen Pull Request zu erstellen.
 
 Your feedback makes a difference! Have any suggestions, found bugs, or want to pitch in? Don't hesitate to report an issue or create a pull request.
