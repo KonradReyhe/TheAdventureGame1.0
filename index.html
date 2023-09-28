@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Point and Click Adventure</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="startingScreen" class="scene">
+      <div id="error-message" class="error-message-hidden">
+        Please enter your name before starting the game.
+      </div>
+      <audio id="startingScreenMusic" loop autoplay>
+        <source src="Sounds/StartingScreenMusic.mp3" type="audio/mpeg" />
+      </audio>
+      <div id="eagle"></div>
+      <div id="rabbit"></div>
+
+      <img src="backgrounds/Logo.png" alt="Logo" class="logo" />
+      <h1 id="gameTitle">The Adventure Game</h1>
+
+      <p id="gameDescription">
+        Join us in an exciting click and point adventure through a magical world
+        full of challenges and mysteries.
+      </p>
+
+      <input type="text" id="playerName" placeholder="Enter your name" />
+      <div id="characterSelection">
+        <label for="character">Select your character:</label>
+        <select id="character">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+
+      <div id="languageSelection">
+        <label for="language">Language:</label>
+        <select id="language">
+          <option value="en">English</option>
+          <option value="de">Deutsch</option>
+        </select>
+      </div>
+      <label for="volume" id="volumeLabel">Volume:</label>
+      <input
+        type="range"
+        id="volume"
+        name="volume"
+        min="0"
+        max="100"
+        value="0"
+      />
+
+      <div id="music-info" style="display: none">
+        🎵 Please Calm My Mind - Lesfm
+      </div>
+
+      <button id="startButton">Start Game</button>
+    </div>
+
+    <div id="gameScene" class="scene" style="display: none">
+      <audio id="gameSceneMusic" loop>
+        <source src="Sounds/scene1.mp3" type="audio/mpeg" />
+      </audio>
+      <audio id="bingSound">
+        <source src="Sounds/bing.mp3" type="audio/mpeg" />
+      </audio>
+      <audio id="envelopeSound" src="sounds/click.mp3"></audio>
+      <audio id="mirrorSound" src="sounds/click.mp3"></audio>
+      <audio id="clickSound" src="Sounds/click.mp3"></audio>
+      <audio id="forestFootstepsSound">
+        <source src="Sounds/forrest_footsteps.mp3" type="audio/mpeg" />
+      </audio>
+
+      <div id="beetle"></div>
+      <div
+        id="transition-cover"
+        style="
+          display: none;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background-color: black;
+          z-index: 10000;
+        "
+      ></div>
+
+      <img src="backgrounds/home.jpg" alt="Home" class="background" />
+      <div id="bottom-container">
+        <div class="inventory-container">
+          <div class="inventory">
+            <div class="inventory-slot"></div>
+            <div class="inventory-slot"></div>
+            <div class="inventory-slot"></div>
+            <div class="inventory-slot"></div>
+            <div class="inventory-slot"></div>
+            <div class="inventory-slot"></div>
+          </div>
+        </div>
+
+        <div id="textWindow" class="text-window"></div>
+      </div>
+      <div id="options" class="options">
+        <div id="optionsContainer">
+          <button id="optionsButton">Options</button>
+          <div id="volumeControlGame" class="volume-control-hidden">
+            <label
+              for="volumeGame"
+              id="volumeLabelGame"
+              class="volume-control-hidden"
+              >Volume:</label
+            >
+
+            <input
+              type="range"
+              id="volumeGame"
+              name="volumeGame"
+              min="0"
+              max="100"
+              value="0"
+              class="horizontal-slider"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js" type="module"></script>
+  </body>
+</html>
