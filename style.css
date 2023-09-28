@@ -1028,3 +1028,14 @@ body {
   right: 0;
   bottom: 47%;
 }
+
+.popup-message {
+  position: absolute;
+  left: calc(100% + 10px); /* adjust this if needed */
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #f9f9f9; /* adjust background color if needed */
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}

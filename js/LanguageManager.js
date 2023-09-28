@@ -58,6 +58,7 @@ export class LanguageManager {
         carrotMessage: "This is a carrot!",
         goFurther: "Go further",
         goBackHome: "Go back home",
+        underDevelopment: "Under Development",
       },
       de: {
         startGame: "Spiel starten",
@@ -111,6 +112,7 @@ export class LanguageManager {
         carrotMessage: "Das ist eine Karotte!",
         goFurther: "Weiter gehen",
         goBackHome: "Nach Hause gehen",
+        underDevelopment: "In Entwicklung",
       },
     };
     this.textManager = new TextManager(

@@ -218,7 +218,7 @@ export class SceneManager {
     const goFurtherButton = this.createButton(
       this.textManager.getText("goFurther"),
       "go-button",
-      this.goToNextScene
+      this.goToNextScene.bind(this)
     );
     gameScene.appendChild(goFurtherButton);
     const goBackButton = this.createButton(
@@ -240,7 +240,24 @@ export class SceneManager {
   }
 
   goToNextScene() {
-    console.log("Moving to the next scene...");
+    let popup = document.createElement("div");
+    popup.textContent = this.textManager.getText("underDevelopment");
+    popup.className = "popup-message";
+    popup.style.position = "fixed";
+    popup.style.top = "50%";
+    popup.style.left = "50%";
+    popup.style.transform = "translate(-50%, -50%)";
+    popup.style.zIndex = "1000";
+    popup.style.backgroundColor = "white";
+    popup.style.padding = "20px";
+    popup.style.border = "1px solid black";
+
+    let goFurtherButton = document.querySelector(".go-button");
+    goFurtherButton.insertAdjacentElement("afterend", popup);
+
+    setTimeout(() => {
+      if (popup) popup.remove();
+    }, 3000);
   }
 
   goBackHome() {
