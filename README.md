@@ -1,4 +1,4 @@
-# 🎮 TheAdventureGame1.0
+# 🎮 [TheAdventureGame1.0](https://github.com/KonradReyhe/TheAdventureGame1.0)
 
 Ein Point-and-Click-Abenteuerspiel als Lernprojekt in HTML, CSS und JavaScript, integriert mit ChatGPT-4.0. Begib dich auf eine geheimnisvolle Reise, interagiere mit deiner Umgebung und entdecke die in diesem Spiel verborgenen Geheimnisse.
 
