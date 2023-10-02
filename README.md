@@ -4,7 +4,12 @@ Ein Point-and-Click-Abenteuerspiel als Lernprojekt in HTML, CSS und JavaScript, 
 
 A point-and-click adventure game designed as a learning project in HTML, CSS, and JavaScript, integrated with ChatGPT-4.0. Embark on a mysterious journey, interact with your surroundings, and discover the secrets hidden within.
 
-## Screenshot vom Startbildschirm | Starting Screen
+## Wie man spielt | How to Play
+Beginnen Sie das Abenteuer, indem Sie dem folgenden Link folgen: [TheAdventureGame1.0](https://konradreyhe.github.io/TheAdventureGame1.0/)
+
+Kick off the adventure by following this link: [TheAdventureGame1.0](https://konradreyhe.github.io/TheAdventureGame1.0/)
+
+## Screenshot vom Startbildschirm | Starting Screen Screenshot
 ![Starting Screen](StartingScreen.jpg)
 
 ## Screenshot vom Heimatszene | Home Scene Screenshot
@@ -25,6 +30,17 @@ Nimm eine Karotte auf. (Bitte beachten: Der Fortschritt nach dieser Szene wurde 
 
 Pick up a carrot. (Please note: Progression beyond this scene has not been developed yet.)
 
+## Zukünftige Entwicklungen | Future Developments
+
+1. **Implementierung eines weiblichen Charakters:** Spieler werden bald die Möglichkeit haben, zwischen einem männlichen oder weiblichen Charakter zu wählen.
+    * **Implementation of a Female Character:** Players will soon have the option to choose between a male or female character.
+  
+2. **Szene mit dem alten Mann:** Der Spieler wird auf einen weisen alten Mann treffen, der Hinweise und Rätsel gibt, die dem Spieler helfen, die nächste Phase des Spiels zu erreichen.
+    * **Scene with the Old Man:** The player will encounter a wise old man, providing hints and puzzles that assist the player in reaching the next phase of the game.
+  
+3. **Weitere Reise:** Nach der Begegnung mit dem alten Mann wird der Spieler eine Reihe von Interaktionen mit verschiedenen NPCs, Gegenständen und Aufgaben erleben, die die Geschichte weiter vorantreiben.
+    * **Continued Journey:** After the encounter with the old man, the player will experience a series of interactions with various NPCs, objects, and tasks that further advance the story.
+  
 ## Entwicklungsziel | Development Purpose
 Seit Februar 2023 mache ich eine Umschulung zum Anwendungsentwickler, die im Februar 2025 abgeschlossen sein wird. Dieses Spiel wurde in erster Linie als praktisches Projekt entwickelt, um:
 - Die Grundlagen und Feinheiten von HTML, CSS und JavaScript zu erlernen.
