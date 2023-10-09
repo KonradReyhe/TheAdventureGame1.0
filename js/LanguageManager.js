@@ -20,6 +20,7 @@ export class LanguageManager {
         gameDescription:
           "Join us in an exciting click and point adventure through a magical world full of challenges and mysteries.",
         male: "Male",
+        female: "Female",
         errorMessage: "Please enter your name before starting the game.",
         welcomeMessage:
           "You are now in front of your home, {playerName}. Good luck on your adventure!",
@@ -72,6 +73,7 @@ export class LanguageManager {
         gameDescription:
           "Begleiten Sie uns auf einem spannenden Point-and-Click-Abenteuer durch eine magische Welt voller Herausforderungen und Geheimnissen.",
         male: "Männlich",
+        female: "Weiblich",
         errorMessage:
           "Bitte geben Sie Ihren Namen ein, bevor Sie das Spiel starten.",
         welcomeMessage:

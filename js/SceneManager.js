@@ -161,12 +161,19 @@ export class SceneManager {
 
   handleForestTransition() {
     this.textManager.showHouseCloseMessage();
-    const { gameScene, gameSceneRect, characterWidth } =
-      this.getSceneAndCharacterDimensions();
+    const dimensions = this.getSceneAndCharacterDimensions();
+
+    if (!dimensions) {
+      console.error("Cannot transition scene because dimensions are null.");
+      return;
+    }
+
+    const { gameScene, gameSceneRect, characterWidth } = dimensions;
     const newCharacterPosition = {
       x: gameSceneRect.width * 0.8 - characterWidth / 2,
       y: "1%",
     };
+
     this.character.updatePosition(newCharacterPosition);
     if (!this.hasCarrotBeenPickedUp) {
       this.carrotElement = this.addInteractableToScene(
@@ -179,6 +186,12 @@ export class SceneManager {
 
   getSceneAndCharacterDimensions() {
     const gameScene = document.getElementById(SCENES.GAME_SCENE);
+
+    if (!this.characterSprite) {
+      console.error("Character sprite is not set");
+      return null;
+    }
+
     return {
       gameScene,
       gameSceneRect: gameScene.getBoundingClientRect(),

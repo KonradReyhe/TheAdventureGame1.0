@@ -1,35 +1,36 @@
 export class Character {
   constructor() {
-    this.character = "male";
+    this.character = "male"; 
     this.playerName = "";
     this.walkSprites = [];
     this.currentSpriteIndex = 0;
     this.isWalking = false;
     this.walkAnimationFrameCounter = 0;
-    this.walkAnimationFrameThreshold = 30; 
+    this.walkAnimationFrameThreshold = 30;
 
-    
     this.createAndPositionCharacter();
   }
 
   setCharacter(character, playerName = "") {
     this.character = character;
-    this.playerName = playerName; 
+    this.playerName = playerName;
     this.loadWalkSprites();
+
+    
+    this.updateIdleSprite();
   }
 
   loadWalkSprites() {
-    if (this.character === "male") {
-      for (let i = 1; i <= 8; i++) {
-        const img = new Image();
-        img.src = `Characters/maleWalk${i}.png`;
-        img.onload = () => {
-          img.height = 400; 
-        };
-        this.walkSprites.push(img);
-      }
-    } else {
-      
+    this.walkSprites = []; 
+    let spriteCount = this.character === "male" ? 8 : 4; 
+
+    for (let i = 1; i <= spriteCount; i++) {
+      const img = new Image();
+      img.src = `Characters/${this.character}Walk${i}.png`;
+      img.onload = () => {
+        img.height = 400;
+      };
+      this.walkSprites.push(img);
     }
   }
 
@@ -39,23 +40,27 @@ export class Character {
     const characterSprite = document.createElement("img");
     characterSprite.id = "characterSprite";
     characterSprite.style.position = "absolute";
-    characterSprite.style.height = "400px"; 
-    characterSprite.style.width = "auto"; 
-    characterSprite.style.zIndex = 5; 
-
-    if (this.character === "male") {
-      characterSprite.src = "Characters/maleIdle.png";
-    } else {
-      
-    }
-
-   
-    characterSprite.style.left = "45%";
-    characterSprite.style.bottom = "-5%";
+    characterSprite.style.height = "400px";
+    characterSprite.style.width = "auto";
+    characterSprite.style.zIndex = 5;
 
     gameScene.appendChild(characterSprite);
 
-    this.characterSprite = characterSprite; 
+    this.updateIdleSprite(); 
+
+    characterSprite.style.left = "45%";
+    characterSprite.style.bottom = "-5%";
+
+    this.characterSprite = characterSprite;
+  }
+
+  updateIdleSprite() {
+    const characterSprite = document.getElementById("characterSprite");
+    if (this.character === "male") {
+      characterSprite.src = "Characters/maleIdle.png";
+    } else if (this.character === "female") {
+      characterSprite.src = "Characters/femaleIdle.png";
+    }
   }
 
   updateSprite() {
@@ -73,7 +78,6 @@ export class Character {
     const gameScene = document.getElementById("gameScene");
     const gameSceneRect = gameScene.getBoundingClientRect();
 
-    
     const characterSprite = document.getElementById("characterSprite");
     const characterSpriteRect = characterSprite.getBoundingClientRect();
     x = Math.max(
@@ -86,7 +90,7 @@ export class Character {
     );
 
     const startX = characterSprite.offsetLeft;
-    const startBottom = parseInt(characterSprite.style.bottom, 10); 
+    const startBottom = parseInt(characterSprite.style.bottom, 10);
 
     const steps = 150;
     const dx = (x - startX) / steps;
@@ -99,11 +103,9 @@ export class Character {
     const animate = () => {
       if (currentStep < steps) {
         characterSprite.style.left = startX + currentStep * dx + "px";
-        
-        characterSprite.style.bottom = startBottom + "px"; 
+        characterSprite.style.bottom = startBottom + "px";
         currentStep++;
 
-        
         if (
           this.walkAnimationFrameCounter >= this.walkAnimationFrameThreshold
         ) {
@@ -116,12 +118,7 @@ export class Character {
         requestAnimationFrame(animate);
       } else {
         this.isWalking = false;
-        
-        if (this.character === "male") {
-          characterSprite.src = "Characters/maleIdle.png";
-        } else {
-          
-        }
+        this.updateIdleSprite(); 
       }
     };
 
@@ -132,9 +129,7 @@ export class Character {
     const gameScene = document.getElementById("gameScene");
     const gameSceneRect = gameScene.getBoundingClientRect();
 
-    
     const x = gameSceneRect.left;
-    
     const y = gameSceneRect.top;
 
     this.walk(x, y);
@@ -144,7 +139,7 @@ export class Character {
     const characterSprite = document.getElementById("characterSprite");
     if (characterSprite) {
       characterSprite.style.left = newPosition.x + "px";
-      characterSprite.style.bottom = newPosition.y; 
+      characterSprite.style.bottom = newPosition.y;
     }
   }
 }
