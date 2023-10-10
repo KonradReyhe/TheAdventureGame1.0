@@ -113,6 +113,13 @@ function handleLanguageChange(event) {
   inventory.updateInventoryLanguage(selectedLanguage);
   languageManager.updateTexts();
 
+  
+  if (playerNameGlobal) {
+    playerNameGlobal =
+      languageManager.translations[selectedLanguage][playerNameGlobal] ||
+      playerNameGlobal;
+  }
+
   const characterOptions = document.getElementById("character").options;
   Array.from(characterOptions).forEach((option) => {
     option.text = languageManager.translations[selectedLanguage][option.value];
@@ -191,4 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .addEventListener("click", () =>
       startingScreenAudioManager.updateVolume(0)
     );
+  const initialLanguage = document.getElementById("language").value;
+  languageManager.changeLanguage(initialLanguage);
+  handleLanguageChange({ target: { value: initialLanguage } });
 });
