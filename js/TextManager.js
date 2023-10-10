@@ -77,6 +77,7 @@ export class TextManager {
     this.updateGoBackHomeButtonText();
     this.updateGoToOldMansHouseButtonText();
     this.updateGameTitle();
+    this.updatePickUpMushroomText();
   }
 
   setErrorText() {
@@ -131,6 +132,22 @@ export class TextManager {
     this.updateLabel(
       "#goToOldMansHouseButton",
       this.getText("goToOldMansHouse")
+    );
+  }
+
+  updatePickUpMushroomText() {
+    const pickUpMushroomButton = document.getElementById(
+      "pickUpMushroomButton"
+    );
+    if (pickUpMushroomButton) {
+      pickUpMushroomButton.textContent =
+        this.translations[this.currentLanguage].pickUpMushroom;
+    }
+  }
+
+  showMushroomMessage() {
+    this.updateTextWindow(
+      this.translations[this.currentLanguage].mushroomMessage
     );
   }
 }

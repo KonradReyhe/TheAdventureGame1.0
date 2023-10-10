@@ -87,6 +87,8 @@ While this project has given me valuable insights into game development, my prim
   - [Freepik](https://de.freepik.com/vektoren-kostenlos/organic-flat-character-animation-frames-pack_13762400.htm)
 - **Weiblicher Charakter-Sprite/Female Character-Sprite:**
   - [Pngtree](https://pngtree.com/freepng/pretty-young-woman-constructor-in-flat-style-parts-of-body-legs-and-arms-face-emotions-vector-cartoon-girl-character_7258981.html)
+- **Mushroom/Fliegenpilz:**
+  - [Pixabay](https://pixabay.com/de/vectors/fliegenpilz-pilz-rot-wei%C3%9F-flecken-295025/)
 
 ## Feedback und Mitarbeit | Feedback and Collaboration
 

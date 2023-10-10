@@ -1,4 +1,3 @@
-
 import {
   displayInteractiveMenu,
   removeInteractiveMenu,
@@ -12,7 +11,7 @@ export class Interactable {
     this.width = width;
     this.height = height;
     this.zIndex = zIndex;
-    this.htmlElement = null; 
+    this.htmlElement = null;
   }
 
   addToScene(parentElement) {
@@ -25,7 +24,7 @@ export class Interactable {
     img.style.height = `${this.height}%`;
     img.style.zIndex = this.zIndex;
     parentElement.appendChild(img);
-    this.htmlElement = img; 
+    this.htmlElement = img;
   }
 }
 
@@ -42,12 +41,11 @@ export class Item extends Interactable {
 export class Carrot extends Item {
   constructor(imageSrc, x, y, width, height, scene) {
     super(imageSrc, x, y, width, height, 20);
-    this.scene = scene; 
-    this.interactive = false; 
+    this.scene = scene;
+    this.interactive = false;
 
-    this.addToScene(scene); 
+    this.addToScene(scene);
 
-    
     this.htmlElement.addEventListener("click", () => {
       if (!this.interactive) {
         this.interactive = true;
@@ -65,8 +63,43 @@ export class Carrot extends Item {
   }
 
   takeCarrot() {
-    this.scene.inventory.addItem(new Item(this.imageSrc, 0, 0, 10, 10)); 
-    this.htmlElement.parentNode.removeChild(this.htmlElement); 
-    removeInteractiveMenu(); 
+    this.scene.inventory.addItem(new Item(this.imageSrc, 0, 0, 10, 10));
+    this.htmlElement.parentNode.removeChild(this.htmlElement);
+    removeInteractiveMenu();
+  }
+}
+
+export class Mushroom extends Item {
+  constructor(imageSrc, x, y, width, height, scene) {
+    super(imageSrc, x + 10, y, width, height, 20);
+
+    this.scene = scene;
+    this.interactive = false;
+
+    this.addToScene(scene);
+
+    this.htmlElement.addEventListener("click", () => {
+      if (!this.interactive) {
+        this.interactive = true;
+        displayInteractiveMenu(
+          [
+            {
+              text: "Take",
+              action: this.takeMushroom.bind(this),
+            },
+          ],
+          this.htmlElement
+        );
+      }
+    });
+  }
+
+  takeMushroom() {
+    if (!this.taken) {
+      this.scene.inventory.addItem(new Item(this.imageSrc, 0, 0, 10, 10));
+      this.htmlElement.parentNode.removeChild(this.htmlElement);
+      removeInteractiveMenu();
+      this.taken = true;
+    }
   }
 }

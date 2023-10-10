@@ -60,6 +60,8 @@ export class LanguageManager {
         goFurther: "Go further",
         goBackHome: "Go back home",
         underDevelopment: "Under Development",
+        pickUpMushroom: "Pick up mushroom", 
+        mushroomMessage: "The Mushroom looks interesting...",
       },
       de: {
         startGame: "Spiel starten",
@@ -115,6 +117,8 @@ export class LanguageManager {
         goFurther: "Weiter gehen",
         goBackHome: "Nach Hause gehen",
         underDevelopment: "In Entwicklung",
+        pickUpMushroom: "Pilz aufheben", 
+        mushroomMessage: "Der Pilz sieht interessant aus...",
       },
     };
     this.textManager = new TextManager(
@@ -134,6 +138,7 @@ export class LanguageManager {
       this.translations[this.currentLanguage]["volume"]
     );
     this.textManager.updatePickUpCarrotText();
+    this.textManager.updatePickUpMushroomText();
     this.textManager.updateGoFurtherButtonText();
     this.textManager.updateGoBackHomeButtonText();
 

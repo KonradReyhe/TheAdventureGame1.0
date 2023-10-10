@@ -25,6 +25,7 @@ const IMAGE_PATHS = {
   HOME: `${BASE_PATH}/Backgrounds/home.jpg`,
   CARROT: `${BASE_PATH}/Items/carrot.png`,
   MAILBOX: `${BASE_PATH}/Interactables/mailbox.png`,
+  MUSHROOM: `${BASE_PATH}/Items/mushroom.png`,
 };
 
 export class SceneManager {
@@ -36,11 +37,13 @@ export class SceneManager {
     this.carrotElement = null;
     this.trashCan = null;
     this.hasCarrotBeenPickedUp = false;
+    this.hasMushroomBeenPickedUp = false;
     this.isMailboxAdded = false;
     this.homeInteractables = [];
     this.currentMenu = null;
     this.languageManager = languageManager;
     this.trashCan = trashCan;
+    this.mushroomElement = null;
   }
 
   setup(character, inventory, trashCan) {
@@ -182,6 +185,14 @@ export class SceneManager {
       );
     }
     this.createGoFurtherButton(gameScene);
+
+    if (!this.hasMushroomBeenPickedUp) {
+      this.mushroomElement = this.addInteractableToScene(
+        IMAGE_PATHS.MUSHROOM,
+        this.handleMushroomInteraction.bind(this)
+      );
+      this.mushroomElement.style.left = "60%";
+    }
   }
 
   getSceneAndCharacterDimensions() {
@@ -374,5 +385,33 @@ export class SceneManager {
       }
     }
     this.homeInteractables = [];
+  }
+  handleMushroomInteraction(event) {
+    event.preventDefault();
+    const menu = (this.currentMenu = displayInteractiveMenu(
+      [
+        {
+          text: this.textManager.getText("pickUpMushroom"),
+          onClick: this.pickUpMushroom.bind(this),
+        },
+      ],
+      event.clientX,
+      event.clientY
+    ));
+  }
+
+  pickUpMushroom() {
+    this.inventory.addItemToInventory({
+      id: 4,
+      name: { en: "Mushroom", de: "Pilz" },
+      image: IMAGE_PATHS.MUSHROOM,
+      clickAction: () => this.textManager.showMushroomMessage(),
+    });
+    this.hasMushroomBeenPickedUp = true;
+    this.mushroomElement.remove();
+    removeInteractiveMenu(this.currentMenu);
+    this.textManager.showMushroomMessage();
+
+    gameSceneAudioManager.playSound("clickSound");
   }
 }
